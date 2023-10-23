@@ -53,8 +53,15 @@ public class AppLauncher extends TelegramLongPollingBot {
                 sendApiMethodAsync(message);
             }
             if (update.getCallbackQuery().getData().equals("get_Setting")) {
-                SendMessage message = createMessage("вибачте функционал \"Налаштування\" у розробці");
+                SendMessage message = createMessage("*Налаштування*");
                 message.setChatId(chatId);
+
+                attachButtons(message,Map.of(
+                        "Кількість знаків після коми", "get_DecimalPlaces",
+                        "Банк","get_Bank",
+                        "Валюти","get_Currency",
+                        "Час оповіщень","get_Time"
+                ));
                 sendApiMethodAsync(message);
             }
         }
