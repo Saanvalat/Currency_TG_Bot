@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="53f7a080-7c91-491b-92bc-b8a00522e9fd" name="Changes" comment="first commit with created TG bot">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +42,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="PrivatBank" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -70,6 +74,63 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.AppLauncher">
+    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AppLauncher" />
+      <module name="Currency_Bot.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Privat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="settings.bot.Privat" />
+      <module name="Currency_Bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="settings.bot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PrivatBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="settings.bot.PrivatBank" />
+      <module name="Currency_Bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="settings.bot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="settings.bot.RequestBank" />
+      <module name="Currency_Bot.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="settings.bot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppLauncher" />
+        <item itemvalue="Application.RequestBank" />
+        <item itemvalue="Application.PrivatBank" />
+        <item itemvalue="Application.Privat" />
+        <item itemvalue="Application.AppLauncher" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -113,5 +174,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit with created TG bot" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit with created TG bot" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Currency_Bot$RequestBank.ic" NAME="RequestBank Coverage Results" MODIFIED="1698269258333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>settings.bot.*</FILTER>
+    </SUITE>
   </component>
 </project>

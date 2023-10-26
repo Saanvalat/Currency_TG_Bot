@@ -1,0 +1,163 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"53f7a080-7c91-491b-92bc-b8a00522e9fd\" name=\"Changes\" comment=\"first commit with created TG bot\">\n      <change beforePath=\"$PROJECT_DIR$/.idea/gradle.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/gradle.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"ExternalProjectsManager\">\n    <system id=\"GRADLE\">\n      <state>\n        <projects_view>\n          <tree_state>\n            <expand>\n              <path>\n                <item name=\"\" type=\"6a2764b6:ExternalProjectsStructure$RootNode\" />\n                <item name=\"Currency_Bot\" type=\"f1a62948:ProjectNode\" />\n              </path>\n            </expand>\n            <select />\n          </tree_state>\n        </projects_view>\n      </state>\n    </system>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"HighlightingSettingsPerFile\">\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/BotLauncher.java\" root0=\"FORCE_HIGHLIGHTING\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2X4p4mahA86AyGXhfSPiQTF9o8t\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"git-widget-placeholder\": \"main\",\n    \"jdk.selected.JAVA_MODULE\": \"corretto-17\",\n    \"last_opened_file_path\": \"/Users/mac/Documents/Code/Currency_Bot\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\"\n  }\n}]]></component>\n  <component name=\"RecentsManager\">\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\n      <recent name=\"\" />\n    </key>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"53f7a080-7c91-491b-92bc-b8a00522e9fd\" name=\"Changes\" comment=\"\" />\n      <created>1697898021171</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1697898021171</updated>\n    </task>\n    <task id=\"LOCAL-00001\" summary=\"first commit with created TG bot\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1697899167093</created>\n      <option name=\"number\" value=\"00001\" />\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697899167093</updated>\n    </task>\n    <task id=\"LOCAL-00002\" summary=\"first commit with created TG bot\">\n      <option name=\"closed\" value=\"true\" />\n      <created>1697899892369</created>\n      <option name=\"number\" value=\"00002\" />\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\n      <option name=\"project\" value=\"LOCAL\" />\n      <updated>1697899892369</updated>\n    </task>\n    <option name=\"localTasksCounter\" value=\"3\" />\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n  <component name=\"VcsManagerConfiguration\">\n    <MESSAGE value=\"first commit with created TG bot\" />\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"first commit with created TG bot\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 2842003b27381d75592a0884dd840640d9391f62)
++++ b/.idea/workspace.xml	(date 1698350584061)
+@@ -4,9 +4,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="53f7a080-7c91-491b-92bc-b8a00522e9fd" name="Changes" comment="first commit with created TG bot">
+-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
++    <list default="true" id="53f7a080-7c91-491b-92bc-b8a00522e9fd" name="Changes" comment="add privatbank rate">
++      <change afterPath="$PROJECT_DIR$/src/main/java/settings/bot/MessageSender.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/checksums.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/md5-checksums.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.0/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/checksums/sha1-checksums.bin" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppLauncher.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/settings/bot/AplicationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/bot/AplicationConstants.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/settings/bot/Privat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/bot/Privat.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/settings/bot/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/bot/TelegramBot.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -43,10 +54,18 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="requestBanks" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="HighlightingSettingsPerFile">
+     <setting file="file://$PROJECT_DIR$/src/main/java/BotLauncher.java" root0="FORCE_HIGHLIGHTING" />
++  </component>
++  <component name="ProblemsViewState">
++    <option name="selectedTabId" value="CurrentFile" />
+   </component>
+   <component name="ProjectId" id="2X4p4mahA86AyGXhfSPiQTF9o8t" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+@@ -58,7 +77,7 @@
+   "keyToString": {
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main",
++    "git-widget-placeholder": "PrivatBank",
+     "jdk.selected.JAVA_MODULE": "corretto-17",
+     "last_opened_file_path": "/Users/mac/Documents/Code/Currency_Bot",
+     "project.structure.last.edited": "Modules",
+@@ -67,9 +86,69 @@
+   }
+ }]]></component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src/main/java" />
++    </key>
+     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+       <recent name="" />
+     </key>
++  </component>
++  <component name="RunManager" selected="Application.AppLauncher">
++    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="AppLauncher" />
++      <module name="Currency_Bot.main" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="Privat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="settings.bot.Privat" />
++      <module name="Currency_Bot.main" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="settings.bot.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="PrivatBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="settings.bot.PrivatBank" />
++      <module name="Currency_Bot.main" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="settings.bot.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="RequestBank" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="settings.bot.RequestBank" />
++      <module name="Currency_Bot.main" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="settings.bot.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Privat" />
++        <item itemvalue="Application.RequestBank" />
++        <item itemvalue="Application.PrivatBank" />
++        <item itemvalue="Application.AppLauncher" />
++        <item itemvalue="Application.RequestBank" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -96,7 +175,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1697899892369</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="add privatbank rate">
++      <option name="closed" value="true" />
++      <created>1698339012857</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1698339012857</updated>
++    </task>
++    <option name="localTasksCounter" value="4" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -112,6 +199,12 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="first commit with created TG bot" />
+-    <option name="LAST_COMMIT_MESSAGE" value="first commit with created TG bot" />
++    <MESSAGE value="add privatbank rate" />
++    <option name="LAST_COMMIT_MESSAGE" value="add privatbank rate" />
++  </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/Currency_Bot$RequestBank.ic" NAME="RequestBank Coverage Results" MODIFIED="1698269258333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>settings.bot.*</FILTER>
++    </SUITE>
+   </component>
+ </project>
+\ No newline at end of file
