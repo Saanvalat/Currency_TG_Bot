@@ -35,17 +35,28 @@ public class Privat {
         return "Something went wrong";
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static String getCurrencyRates() throws IOException, InterruptedException {
         String usdBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD, "buy");
         String eurBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR, "buy");
         String usdSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD,"sale");
         String eurSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR,"sale");
 
-        System.out.println("Продаж USD: " + usdBuy);
-        System.out.println("Кулівля USD: " + usdSale);
-        System.out.println("Продаж EUR: " + eurBuy);
-        System.out.println("Купівля EUR: " + eurSale);
+        return "Продаж USD: " + usdBuy + "\n" +
+                "Кулівля USD: " + usdSale + "\n" +
+                "Продаж EUR: " + eurBuy + "\n" +
+                "Купівля EUR: " + eurSale;
     }
+//    public static void main(String[] args) throws IOException, InterruptedException {
+//        String usdBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD, "buy");
+//        String eurBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR, "buy");
+//        String usdSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD,"sale");
+//        String eurSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR,"sale");
+//
+//        System.out.println("Продаж USD: " + usdBuy);
+//        System.out.println("Кулівля USD: " + usdSale);
+//        System.out.println("Продаж EUR: " + eurBuy);
+//        System.out.println("Купівля EUR: " + eurSale);
+//    }
 
     private static String sendGetRequest(String url) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
