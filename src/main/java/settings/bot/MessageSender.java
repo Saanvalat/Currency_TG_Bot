@@ -28,9 +28,9 @@ public class MessageSender {
             List<Long> chatIds = getAllSubscribedUsers();
 
             for (Long chatId : chatIds) {
-                SendMessage message = new SendMessage()
-                        .setChatId(chatId)
-                        .setText(currencyRates);
+                SendMessage message = new SendMessage();
+                message.setChatId(chatId);
+                message.setText(currencyRates);
 
                 try {
                     bot.execute(message);
