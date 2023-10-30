@@ -74,28 +74,28 @@ public class RequestBank {
     }
     private static float getCurrencyRateMONO(Stream<JsonElement> jsonStream, int currency, boolean operation) {
         return jsonStream
-                    .filter(JsonElement::isJsonObject)
-                    .map(JsonElement::getAsJsonObject)
-                    .filter(jsonObject -> jsonObject.has("currencyCodeA") && (jsonObject.get("currencyCodeA").getAsInt() == currency) && jsonObject.has("currencyCodeB") && (jsonObject.get("currencyCodeB").getAsInt() == UAH_CODE))
-                    .map(jsonObject -> operation ? jsonObject.get("rateBuy").getAsFloat() : jsonObject.get("rateSell").getAsFloat())
-                    .findFirst()
-                    .orElse(null);
-        }
-    private static float getCurrencyRateNBU(Stream<JsonElement> jsonStream, int currency) {
-        return jsonStream
-                    .filter(JsonElement::isJsonObject)
-                    .map(JsonElement::getAsJsonObject)
-                    .filter(jsonObject -> jsonObject.has("r030") && (jsonObject.get("r030").getAsInt() == currency))
-                    .map(jsonObject -> jsonObject.get("rate").getAsFloat())
+                .filter(JsonElement::isJsonObject)
+                .map(JsonElement::getAsJsonObject)
+                .filter(jsonObject -> jsonObject.has("currencyCodeA") && (jsonObject.get("currencyCodeA").getAsInt() == currency) && jsonObject.has("currencyCodeB") && (jsonObject.get("currencyCodeB").getAsInt() == UAH_CODE))
+                .map(jsonObject -> operation ? jsonObject.get("rateBuy").getAsFloat() : jsonObject.get("rateSell").getAsFloat())
                 .findFirst()
                 .orElse(null);
-        }
+    }
+    private static float getCurrencyRateNBU(Stream<JsonElement> jsonStream, int currency) {
+        return jsonStream
+                .filter(JsonElement::isJsonObject)
+                .map(JsonElement::getAsJsonObject)
+                .filter(jsonObject -> jsonObject.has("r030") && (jsonObject.get("r030").getAsInt() == currency))
+                .map(jsonObject -> jsonObject.get("rate").getAsFloat())
+                .findFirst()
+                .orElse(null);
+    }
     private static void delay(int millsec) {
         try {
             Thread.sleep(millsec);
         } catch(InterruptedException ex) {}
     }
-        //for tests request methods
+    //for tests request methods
     public static void main(String[] args) throws IOException, InterruptedException {
 
         System.out.println("Курси продажу та купівлі валюти Приватбанку");

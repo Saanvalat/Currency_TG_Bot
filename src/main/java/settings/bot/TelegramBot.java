@@ -5,11 +5,14 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import static settings.bot.AplicationConstants.BOT_NAME;
-import static settings.bot.AplicationConstants.BOT_TOKEN;
+
 
 public class TelegramBot extends TelegramLongPollingBot {
+    private final AplicationConstants aplicationConstants;
 
+    public TelegramBot(AplicationConstants aplicationConstants) {
+        this.aplicationConstants = aplicationConstants;
+    }
 
     @Override
     public void onUpdateReceived(Update update) {
@@ -29,11 +32,11 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return aplicationConstants.getBotName();
     }
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return aplicationConstants.getBotToken();
     }
 }
