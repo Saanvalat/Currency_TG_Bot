@@ -1,18 +1,12 @@
 package settings.bot;
+
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.lang.module.Configuration;
-import org.json.JSONObject;
-
-
-
-
 
 public class AplicationConstants {
-
 
     private JSONObject jsonObject;
 

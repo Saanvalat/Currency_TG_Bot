@@ -9,7 +9,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -25,10 +24,8 @@ public class RequestBank {
     private static final int USD_CODE = 840;
     private static final int EUR_CODE = 978;
     private static final int UAH_CODE = 980;
-    public List<CurrencyRate> currencyPrivat = new ArrayList<CurrencyRate>();
-    public List<CurrencyRate> currencyMono = new ArrayList<CurrencyRate>();
-    public List<CurrencyRate> currencyNBU = new ArrayList<CurrencyRate>();
     private static final HttpClient CLIENT = HttpClient.newHttpClient();
+
 
     private static Stream<JsonElement> sendGetRequest(String url) throws IOException, InterruptedException {
         HttpResponse<String> response;
@@ -44,8 +41,7 @@ public class RequestBank {
             statusCode = response.statusCode();
             if (statusCode != 429) { //Too Many Requests response
                 access = true;
-            }
-            else {
+            } else {
                 delay(counterSec);
                 counterSec *= 2;
             }
@@ -61,6 +57,8 @@ public class RequestBank {
         System.out.println("status " + statusCode);
         return null;
     }
+
+
     private static float getCurrencyRatePrivat(Stream<JsonElement> jsonStream, String currency, boolean operation) {
         return jsonStream
                 .filter(JsonElement::isJsonObject)
@@ -68,10 +66,9 @@ public class RequestBank {
                 .filter(jsonObject -> jsonObject.has("ccy") && jsonObject.get("ccy").getAsString().equals(currency) && jsonObject.has("base_ccy") && jsonObject.get("base_ccy").getAsString().equals("UAH"))
                 .map(jsonObject -> operation ? jsonObject.get("buy").getAsFloat() : jsonObject.get("sale").getAsFloat())
                 .findFirst()
-                .orElse(null);
-
-
+                .orElse(0.0f);
     }
+
     private static float getCurrencyRateMONO(Stream<JsonElement> jsonStream, int currency, boolean operation) {
         return jsonStream
                 .filter(JsonElement::isJsonObject)
@@ -79,8 +76,10 @@ public class RequestBank {
                 .filter(jsonObject -> jsonObject.has("currencyCodeA") && (jsonObject.get("currencyCodeA").getAsInt() == currency) && jsonObject.has("currencyCodeB") && (jsonObject.get("currencyCodeB").getAsInt() == UAH_CODE))
                 .map(jsonObject -> operation ? jsonObject.get("rateBuy").getAsFloat() : jsonObject.get("rateSell").getAsFloat())
                 .findFirst()
-                .orElse(null);
+                .orElse(0.0f); //
     }
+
+
     private static float getCurrencyRateNBU(Stream<JsonElement> jsonStream, int currency) {
         return jsonStream
                 .filter(JsonElement::isJsonObject)
@@ -88,16 +87,19 @@ public class RequestBank {
                 .filter(jsonObject -> jsonObject.has("r030") && (jsonObject.get("r030").getAsInt() == currency))
                 .map(jsonObject -> jsonObject.get("rate").getAsFloat())
                 .findFirst()
-                .orElse(null);
+                .orElse(0.0f);
     }
+
+
     private static void delay(int millsec) {
         try {
             Thread.sleep(millsec);
-        } catch(InterruptedException ex) {}
+        } catch (InterruptedException ex) {
+        }
     }
-    //for tests request methods
-    public static void main(String[] args) throws IOException, InterruptedException {
 
+
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Курси продажу та купівлі валюти Приватбанку");
         System.out.println("Купівля USD: " + getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD, BUY));
         System.out.println("Купівля EUR: " + getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR, BUY));
@@ -106,26 +108,12 @@ public class RequestBank {
 
         System.out.println("Курси продажу та купівлі валюти Монобанку");
         System.out.println("Купівля USD: " + getCurrencyRateMONO(sendGetRequest(MONO_URL), USD_CODE, BUY));
-        System.out.println("Кулівля EUR: " + getCurrencyRateMONO(sendGetRequest(MONO_URL), EUR_CODE, BUY));
+        System.out.println("Купівля EUR: " + getCurrencyRateMONO(sendGetRequest(MONO_URL), EUR_CODE, BUY));
         System.out.println("Продаж USD: " + getCurrencyRateMONO(sendGetRequest(MONO_URL), USD_CODE, SELL));
         System.out.println("Продаж EUR: " + getCurrencyRateMONO(sendGetRequest(MONO_URL), EUR_CODE, SELL));
 
         System.out.println("Курси валюти НБУ");
         System.out.println("Продаж USD: " + getCurrencyRateNBU(sendGetRequest(NBU_URL), USD_CODE));
         System.out.println("Продаж EUR: " + getCurrencyRateNBU(sendGetRequest(NBU_URL), EUR_CODE));
-
     }
-/*    public static String getCurrencyRates() throws IOException, InterruptedException {
-        String usdBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD, "buy");
-        String eurBuy = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR, "buy");
-        String usdSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), USD,"sale");
-        String eurSale = getCurrencyRatePrivat(sendGetRequest(PRIVAT_URL), EUR,"sale");
-
-        return "Продаж USD: " + usdBuy + "\n" +
-                "Кулівля USD: " + usdSale + "\n" +
-                "Продаж EUR: " + eurBuy + "\n" +
-                "Купівля EUR: " + eurSale;
-    }*/
-
-
 }
