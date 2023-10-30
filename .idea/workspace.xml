@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53f7a080-7c91-491b-92bc-b8a00522e9fd" name="Changes" comment="first commit with created TG bot">
+    <list default="true" id="53f7a080-7c91-491b-92bc-b8a00522e9fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/settings/bot/MessageSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/settings/bot/Privat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/settings/bot/AplicationConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/bot/AplicationConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/settings/bot/TelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/settings/bot/TelegramBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +71,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_opened_file_path": "/Users/mac/Documents/Code/Currency_Bot",
     "project.structure.last.edited": "Modules",
@@ -122,6 +131,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Currency_Bot.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Currency_Bot.main" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.AppLauncher" />
@@ -165,7 +187,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="PrivatBank" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
