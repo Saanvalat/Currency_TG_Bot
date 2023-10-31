@@ -23,7 +23,7 @@ import static settings.bot.ApplicationConstants.BOT_TOKEN;
 import static settings.bot.ApplicationConstants.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
-    public UserSettings userSettings = new UserSettings(NBU,false,true,4, 10);
+    public UserSettings userSettings = new UserSettings(PRIVAT,true,false,2, 9);
     Integer lastMessageID;
     @Override
     public String getBotUsername() {
@@ -123,6 +123,10 @@ public class TelegramBot extends TelegramLongPollingBot {
             if (update.getCallbackQuery().getData().equals("get_Time")) {
                 time(chatId);
             }
+            if (update.getCallbackQuery().getData().equals("get_Time9")) {
+                userSettings.setNotificationTime(9);
+                time(chatId);
+            }
             if (update.getCallbackQuery().getData().equals("get_Time10")) {
                 userSettings.setNotificationTime(10);
                 time(chatId);
@@ -155,10 +159,6 @@ public class TelegramBot extends TelegramLongPollingBot {
                 userSettings.setNotificationTime(17);
                 time(chatId);
             }
-            if (update.getCallbackQuery().getData().equals("get_Time18")) {
-                userSettings.setNotificationTime(18);
-                time(chatId);
-            }
             if (update.getCallbackQuery().getData().equals("get_Time0")) {
                 userSettings.setNotificationTime(0);
                 time(chatId);
@@ -169,7 +169,8 @@ public class TelegramBot extends TelegramLongPollingBot {
     public void decimalPlaces(long chatId){
         SendMessage message = createMessage("*Оберить кількість знаків після коми*");
         message.setChatId(chatId);
- /*       try {
+        /*int mes_ID = message.getMessageId();
+        try {
             lastMessageID = execute(message).getMessageId();
         } catch (TelegramApiException e) {
             e.printStackTrace();
@@ -208,9 +209,9 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }*/
         attachButtons(message,Map.of(
-                "NBU","get_Bank" + NBU,
-                "PrivatBank","get_Bank" + PRIVAT,
-                "MONOBank","get_Bank" + MONO),
+                "НБУ","get_Bank" + NBU,
+                "Приватбанк","get_Bank" + PRIVAT,
+                "Монобанк","get_Bank" + MONO),
                 "get_Bank" + userSettings.getBank()
         );
         sendApiMethodAsync(message);
@@ -224,7 +225,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }*/
         attachButtons(message,Map.of(
-                "18","get_Time18",
+                "9","get_Time9",
                 "10","get_Time10",
                 "11","get_Time11",
                 "12","get_Time12",
@@ -242,7 +243,6 @@ public class TelegramBot extends TelegramLongPollingBot {
     public Long getChatId(Update update) {
         if (update.hasMessage()) {
             return update.getMessage().getFrom().getId();
-
         }
         if (update.hasCallbackQuery()) {
             return update.getCallbackQuery().getFrom().getId();
@@ -264,7 +264,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             String buttonValue = buttons.get(buttonName);
             InlineKeyboardButton button = new InlineKeyboardButton();
             if (buttonValue.equals(pressedButton)) {
-                button.setText(EmojiParser.parseToUnicode(":white_check_mark:" + buttonName));
+                button.setText(EmojiParser.parseToUnicode(":white_check_mark:" + new String(buttonName.getBytes(), StandardCharsets.UTF_8)));
             } else {
                 button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8));
             }
@@ -282,7 +282,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             String buttonValue = buttons.get(buttonName);
             InlineKeyboardButton button = new InlineKeyboardButton();
             if ((usd && buttonName.equals("USD")) || (eur && buttonName.equals("EUR"))) {
-                button.setText(EmojiParser.parseToUnicode(":white_check_mark:" + buttonName));
+                button.setText(EmojiParser.parseToUnicode(":white_check_mark:" + new String(buttonName.getBytes(), StandardCharsets.UTF_8)));
             } else {
                 button.setText(new String(buttonName.getBytes(), StandardCharsets.UTF_8));
             }
@@ -293,15 +293,15 @@ public class TelegramBot extends TelegramLongPollingBot {
         markup.setKeyboard(keyboard);
         message.setReplyMarkup(markup);
     }
-   /* public void DeleteMessage(long chatId, int messageId)  {
+    public void DeleteMessage(long chatId, int messageId) throws TelegramApiException {
         try {
             DeleteMessage deleteMessage = new DeleteMessage();
             deleteMessage.setChatId(chatId);
             deleteMessage.setMessageId(messageId);
-            execute(deleteMessage);
+            this.execute(deleteMessage);
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
 }
