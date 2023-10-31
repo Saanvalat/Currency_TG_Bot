@@ -64,7 +64,7 @@ public class TelegramBot extends TelegramLongPollingBot {
             message.setChatId(chatId);
 
             attachButtons(message, Map.of(
-                    "Отримати інфу", "get_Info",
+                    "Отримати інформацію", "get_Info",
                     "Налаштування","get_Setting"
             ),"");
             sendApiMethodAsync(message);
@@ -186,7 +186,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public void decimalPlaces(long chatId){
-        SendMessage message = createMessage("*Оберить кількість знаків після коми*");
+        SendMessage message = createMessage("*Оберіть кількість знаків після коми*");
         message.setChatId(chatId);
  /*       try {
             lastMessageID = execute(message).getMessageId();
@@ -204,7 +204,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
     public void currency(long chatId){
 
-        SendMessage message = createMessage("*Оберить валюту*");
+        SendMessage message = createMessage("*Оберіть валюту*");
         message.setChatId(chatId);
 /*       try {
             lastMessageID = execute(message).getMessageId();
@@ -219,7 +219,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         sendApiMethodAsync(message);
     }
     public void bank(long chatId){
-        SendMessage message = createMessage("*Оберить банк*");
+        SendMessage message = createMessage("*Оберіть банк*");
         message.setChatId(chatId);
  /*       try {
             lastMessageID = execute(message).getMessageId();
@@ -235,7 +235,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         sendApiMethodAsync(message);
     }
     public void time(long chatId){
-        SendMessage message = createMessage("*Оберить час оповіщень*");
+        SendMessage message = createMessage("*Оберіть час оповіщень*");
         message.setChatId(chatId);
 /*       try {
             lastMessageID = execute(message).getMessageId();
