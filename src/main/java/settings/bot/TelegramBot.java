@@ -10,10 +10,14 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import com.vdurmont.emoji.EmojiParser;
+import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import static settings.bot.ApplicationConstants.*;
 
@@ -318,5 +322,34 @@ public class TelegramBot extends TelegramLongPollingBot {
             e.printStackTrace();
         }
     }*/
+
+    public void startScheduledMessageSender() {
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+
+        scheduler.scheduleAtFixedRate(() -> {
+
+            Calendar now = Calendar.getInstance();
+            int currentHour = now.get(Calendar.HOUR_OF_DAY);
+
+
+            if (userSettings.getNotificationTime() == currentHour) {
+                if (userSettings.getNotificationEnabled()) {
+                    sendScheduledMessage(userSettings.getChatId());
+                }
+            }
+        }, 0, 1, TimeUnit.HOURS);
+    }
+
+    private void sendScheduledMessage(long chatId) {
+        SendMessage message = new SendMessage();
+        message.setChatId(chatId);
+        message.setText("Нагадування: Курс валют");
+        try {
+            execute(message);
+        } catch (TelegramApiException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

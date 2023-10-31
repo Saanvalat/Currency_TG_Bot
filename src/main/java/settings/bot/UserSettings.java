@@ -5,6 +5,8 @@ public class UserSettings {
     private boolean eur;
     private int decimalPoints;
     private int notificationTime;
+    private long chatId;
+    private boolean notificationEnabled;
     public UserSettings(int bank, boolean usd, boolean eur, int decimalPoints, int notificationTime) {
         this.bank = bank;
         this.usd = usd;
@@ -41,5 +43,27 @@ public class UserSettings {
     }
     public void setNotificationTime(int notificationTime) {
         this.notificationTime = notificationTime;
+    }
+
+    public UserSettings(long chatId, boolean notificationEnabled) {
+        this.chatId = chatId;
+        this.notificationEnabled = notificationEnabled;
+
+    }
+
+    public long getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(long chatId) {
+        this.chatId = chatId;
+    }
+
+    public boolean getNotificationEnabled() {
+        return notificationEnabled;
+    }
+
+    public void setNotificationEnabled(boolean notificationEnabled) {
+        this.notificationEnabled = notificationEnabled;
     }
 }
