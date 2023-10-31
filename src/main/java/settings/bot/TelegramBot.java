@@ -23,7 +23,7 @@ import static settings.bot.ApplicationConstants.BOT_TOKEN;
 import static settings.bot.ApplicationConstants.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
-    UserSettings userSettings = new UserSettings(NBU,false,true,4, 10);
+    public UserSettings userSettings = new UserSettings(NBU,false,true,4, 10);
     Integer lastMessageID;
     @Override
     public String getBotUsername() {
