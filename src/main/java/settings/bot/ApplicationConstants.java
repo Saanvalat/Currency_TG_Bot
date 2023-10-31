@@ -1,6 +1,12 @@
 package settings.bot;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import java.io.FileInputStream;
+import java.io.IOException;
 
 public class ApplicationConstants extends TelegramBot{
+    private JSONObject jsonObject;
     static final int PRIVAT = 1;
     static final int MONO = 2;
     static final int NBU = 3;
@@ -14,10 +20,25 @@ public class ApplicationConstants extends TelegramBot{
     static final int USD_CODE = 840;
     static final int EUR_CODE = 978;
     static final int UAH_CODE = 980;
-    public static final String BOT_TOKEN = "6602578220:AAGPWbC6OOfwIoSoQPVZ5ZNNQSclwTGzfSg";
-    public static final String BOT_NAME = "ExchangeCurrencyTG2bot";
-/*    public static final String BOT_TOKEN = "6888449176:AAFoGMCJZLZzoGJFDhrwAisJT3_xxX1Ivs8";
-    public static final String BOT_NAME = "ExchangeCurrencyTGbot";*/
 
+    public ApplicationConstants() {
+        try {
+            JSONTokener tokener = new JSONTokener(new FileInputStream("config.json"));
+            jsonObject = new JSONObject(tokener);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        TelegramBot bot = new TelegramBot(this);
+        bot.setApplicationConstants(this);
+    }
+
+    public String getBotToken() {
+        return jsonObject.getString("BOT_TOKEN");
+    }
+
+    public String getBotName() {
+        return jsonObject.getString("BOT_NAME");
+    }
 
 }
+

@@ -2,8 +2,6 @@ package settings.bot;
 
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.methods.updatingmessages.DeleteMessage;
-import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
@@ -12,27 +10,44 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 import com.vdurmont.emoji.EmojiParser;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
 
-import static settings.bot.ApplicationConstants.BOT_NAME;
-import static settings.bot.ApplicationConstants.BOT_TOKEN;
 import static settings.bot.ApplicationConstants.*;
 
 public class TelegramBot extends TelegramLongPollingBot {
+    private ApplicationConstants applicationConstants;
+
+    public TelegramBot(ApplicationConstants applicationConstants) {
+        this.applicationConstants = applicationConstants;
+    }
+
+    public TelegramBot() {
+    }
+
+    public void setApplicationConstants(ApplicationConstants applicationConstants) {
+        this.applicationConstants = applicationConstants;
+    }
+
+    public ApplicationConstants getApplicationConstants() {
+        return applicationConstants;
+    }
     public UserSettings userSettings = new UserSettings(NBU,false,true,4, 10);
     Integer lastMessageID;
+
+
+
+
     @Override
     public String getBotUsername() {
-        return BOT_NAME;
+        return applicationConstants.getBotName();
     }
 
     @Override
     public String getBotToken() {
-        return BOT_TOKEN;
+        return applicationConstants.getBotToken();
     }
     @Override
     public void onUpdateReceived(Update update) {
